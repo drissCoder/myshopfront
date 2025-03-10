@@ -1,0 +1,14 @@
+:host {
+    display: block;
+    height: 100%;
+    overflow: auto;
+}
+
+/* Yellow stars for PrimeNG Rating */
+.custom-rating .p-rating-icon {
+    color: #facc15; /* Yellow color */
+}
+
+.custom-rating .p-rating-icon:hover {
+    color: #fbbf24; /* Slightly darker yellow on hover */
+}

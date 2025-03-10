@@ -1,0 +1,40 @@
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.contact-form h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.contact-form .p-field {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form button {
+  width: 100%;
+}
+
+  
+  button:disabled {
+    background-color: #ccc;
+  }  
+
+  /* Error text style */
+.error-text {
+    color: red;
+    font-size: 0.875rem;
+}
+
+/* Success message badge */
+.success-badge {
+    display: inline-block;
+    background-color: #38a169;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+}

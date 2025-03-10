@@ -1,0 +1,27 @@
+.app-content {
+    overflow: hidden;
+    height: 100%;
+}
+
+.p-toolbar-group-end {
+    position: relative;
+  }
+  .login-container{
+    display: flex;
+    align-items: center;
+    gap: 5;
+  }
+  .cart-count {
+    position: absolute;
+    top: -5px; /* Adjust this value to move the count to a better position */
+    right: -5px; /* Adjust to move it closer to the icon */
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+  }
+   

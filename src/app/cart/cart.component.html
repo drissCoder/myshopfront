@@ -1,0 +1,49 @@
+<div class="cart-container">
+    <h2 class="cart-title">Votre Panier</h2>
+  
+    <div *ngIf="cart().length === 0" class="empty-cart">
+      Votre panier est vide.
+    </div>
+  
+    <ul *ngIf="cart().length > 0" class="cart-list">
+      <li *ngFor="let item of cart(); trackBy: trackById" class="cart-item">
+        <p-card>
+          <ng-template pTemplate="title">{{ item.name }}</ng-template>
+          <ng-template pTemplate="content">
+            <p>Prix: {{ item.price }} €</p>
+            <div class="quantity-controls flex gap-10">
+              <div>
+              <button (click)="updateQuantity(item, -1)" [disabled]="item.quantity <= 1">-</button>
+              <span>Quantité: {{ item.quantity }}</span>
+              <button (click)="updateQuantity(item, 1)">+</button>
+            </div>
+              <div>
+                  <p-button
+                    label="Retirer"
+                    severity="danger"
+                    (onClick)="onRemoveFromCart(item)"
+                  ></p-button>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template pTemplate="header">
+            <img
+              [src]="'assets/img/image.png'"
+              width="150"
+              height="150"
+              alt="Image du produit"
+              class="cart-item-image"
+            />
+          </ng-template>
+          
+        </p-card>
+      </li>
+    </ul>
+    
+    <div *ngIf="cart().length > 0" class="cart-summary">
+      <div class="cart-total">
+        Total: {{ calculateTotal()}} €
+      </div>
+      <p-button label="Passer la commande" severity="success" (onClick)="onCheckout()"></p-button>
+    </div>
+  </div> 

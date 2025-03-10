@@ -1,0 +1,31 @@
+
+.login-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .login-form h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--primary-color);
+  }
+  
+  .login-form .p-field {
+    margin-bottom: 1.5rem;
+  }
+  
+  .login-form button {
+    width: 100%;
+  }
+  
+    
+    button:disabled {
+      background-color: #ccc;
+    }  
+  
+    /* Error text style */
+  .error-text {
+      color: red;
+      font-size: 0.875rem;
+  }

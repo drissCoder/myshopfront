@@ -1,0 +1,35 @@
+<div class="contact-form p-card">
+  <h2>Contact Us</h2>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="p-fluid">
+    <div class="p-field">
+      <label for="email">Email:</label>
+      <input id="email" pInputText type="email" formControlName="email" required />
+      <small *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="p-error">
+        Please enter a valid email address.
+      </small>
+    </div>
+
+    <div class="p-field">
+      <label for="message">Message:</label>
+      <textarea 
+        id="message" 
+        pInputTextarea 
+        formControlName="message" 
+        rows="5" 
+        cols="30" 
+        maxlength="300" 
+        autoResize="true" 
+        required>
+      </textarea>
+      <small *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="p-error">
+        Message is required and must be under 300 characters.
+      </small>
+    </div>
+
+    <div class="p-mt-3">
+      <button pButton type="submit" label="Envoyer" [disabled]="contactForm.invalid" class="p-button-success"></button>
+    </div>
+  </form>
+
+  <p *ngIf="successMessage" class="p-badge p-badge-success p-mt-3">{{ successMessage }}</p>
+</div>

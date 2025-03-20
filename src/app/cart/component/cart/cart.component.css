@@ -1,0 +1,23 @@
+.cart-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plus-minus{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.plus-minus-quantity{
+
+    display: flex;
+    align-items: center;
+}
+
+:host {
+    display: block;
+    height: 100%;
+    overflow: auto;
+}

@@ -1,0 +1,36 @@
+@if(_cart().length === 0){
+    <p style="font-size: 20px; text-align: center; position: relative;">Your cart is empty</p>
+}@else{
+@for(cartItem of _cart(); track cartItem){
+<p-card header="cartItem.productName" header="{{cartItem.name}}">
+    <div class="cart-item">
+        <div>
+            <div>
+                <img width="100px" [src]="'assets/img/laptop.png' || cartItem.image" alt="">
+            </div>
+            <div class="m-0">
+                <span class="font-medium text-secondary text-sm">
+                    {{ cartItem.category }}
+                </span>
+                <div>
+                    {{ cartItem.description }}
+                </div>
+                <div>
+                    Price: <strong>{{ cartItem.price }} €</strong>
+                </div>
+            </div>
+        </div>
+        <div class="plus-minus">
+            <div class="plus-minus-quantity">
+                <p-button icon="pi pi-minus" [rounded]="true" [text]="true" severity="secondary" (click)="decreaseCartItemQantity(cartItem)" />
+                <span style="font-size: 1.2rem; padding: 10px;">{{cartItem.quantity}}</span>
+                <p-button icon="pi pi-plus" [rounded]="true" [text]="true" severity="secondary" (click)="increaseCartItemQantity(cartItem)" />
+            </div>
+            <p-button  icon="pi pi-trash" label="Retirer" severity="danger" (click)="onDeleteProduct(cartItem)" />
+        </div>
+    </div>
+</p-card>
+}
+<p style="font-size: 24px; font-weight: bold; margin-top: 20px;">Total : <strong>{{ total() }} €</strong></p>
+}
+

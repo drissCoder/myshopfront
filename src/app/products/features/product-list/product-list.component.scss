@@ -1,0 +1,14 @@
+:host {
+    display: block;
+    height: 100%;
+    overflow: auto;
+}
+
+.p-icon .p-rating-cancel .p-rating-icon{
+display: none;
+}
+
+:host .p-rating .p-rating-icon.p-rating-cancel {
+    display: none;
+    color: #B00020;
+}

@@ -1,0 +1,19 @@
+.app-content {
+    overflow: hidden;
+    height: 100%;
+}
+
+.p-toolbar-group-end{
+    cursor: pointer;
+    position: relative;
+}
+
+.number-items{
+    position: absolute;
+    top: -16px;
+    right: -9px;
+    background: red;
+    padding: 5px;
+    border-radius: 50%;
+    color: white;
+}

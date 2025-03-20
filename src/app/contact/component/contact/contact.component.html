@@ -1,0 +1,30 @@
+<p-card styleClass="user-form" class="flex justify-content-center w-[300]"
+[style]="{ 
+    borderRadius: '15px',  
+    width: '850px',
+}"
+header="Contact"
+>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="field" style="width: 100%; position: relative;">
+            <label for="firstName" class="block">Email</label>
+            <input type="email" pInputText formControlName="email" style="width: 100%;" required/>
+            <small class="p-error block" *ngIf="
+                contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)
+              ">
+              Email is required
+            </small>
+        </div>
+        <div class="field">
+            <label for="firstName" class="block">Message</label>
+            <textarea pTextarea formControlName="message" style="width: 100%;" rows="5" cols="30" required></textarea>
+            <small class="p-error block" *ngIf="
+                contactForm.get('message')?.invalid && (contactForm.get('message')?.dirty || contactForm.get('message')?.touched)
+              ">
+              message doit être inférieur à 300
+            </small>
+        </div>
+        <button icon="pi pi-send" pButton type="submit" label="Submit" [disabled]="contactForm.invalid"></button>
+    </form>
+    <p *ngIf="submitted" class="success-msg flex gap-2"><i class="pi pi-check"></i> Votre messge à été bien envoyé</p>
+</p-card>
